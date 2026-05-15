@@ -8,9 +8,9 @@ import kruhuliLogo from "@/content/kruhulilogo.png"
 import { cn } from "@/lib/utils"
 
 const NAV_LINKS = [
-  { label: "about", href: "#about" },
-  { label: "blog", href: "/blog" },
-  { label: "experience", href: "#experience" },
+  { label: "About", href: "#about" },
+  { label: "Blog", href: "/blog" },
+  { label: "Experience", href: "#experience" },
 ]
 
 const navPillShell =
@@ -102,7 +102,7 @@ export default function Navigation() {
                   : "bg-white text-[#EA580C] border-white/80 shadow-[0_4px_0px_0px_rgba(255,255,255,0.4)] active:shadow-[0_1px_0px_0px_rgba(255,255,255,0.4)]",
               )}
             >
-              contact
+              Contact
             </button>
           </div>
 
@@ -142,7 +142,7 @@ export default function Navigation() {
                 onClick={() => { scrollTo("#contact"); setMobileOpen(false) }}
                 className="text-left mt-2 mx-2 px-5 py-3 bg-[#EA580C] text-white rounded-xl font-black border-2 border-[#C2410C] shadow-[0_4px_0px_0px_#9A3412] active:shadow-[0_1px_0px_0px_#9A3412] active:translate-y-[3px] transition-all duration-75"
               >
-                contact →
+                Contact →
               </button>
             </div>
           </motion.div>

@@ -17,10 +17,10 @@ export default function Experience() {
           className="mb-16 text-center"
         >
           <p className="text-[#EA580C] text-xs font-mono tracking-[0.2em] mb-4 font-black">
-            where i&apos;ve been
+            Where I&apos;ve Been
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-black text-stone-900">
-            experience
+            Experience
           </h2>
           <p className="mt-4 text-stone-500 max-w-sm mx-auto text-sm leading-relaxed font-medium">
             where i&apos;ve worked, what i built, and a few things i&apos;m actually proud of.

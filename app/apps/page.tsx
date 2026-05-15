@@ -11,32 +11,32 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
-    title: "testingdarwin",
-    eyebrow: "llm evaluation",
+    title: "testingDarwin",
+    eyebrow: "LLM Evaluation",
     description: "Evolutionary prompt tuning for detecting influence strategies in corporate-style email.",
     status: "repo coming soon",
   },
   {
-    title: "advantagegeo ai pipeline",
-    eyebrow: "multi-agent system",
+    title: "AdvantageGEO AI Pipeline",
+    eyebrow: "Multi-Agent System",
     description: "A 6-agent GEO audit pipeline that turned a loose product idea into something customers could buy.",
     status: "private repo",
   },
   {
-    title: "axial sports analytics",
-    eyebrow: "forecasting",
+    title: "Axial Sports Analytics",
+    eyebrow: "Forecasting",
     description: "NBA and MLB performance forecasting with travel, rest, and fatigue signals.",
     status: "repo coming soon",
   },
   {
-    title: "portfolio os",
-    eyebrow: "personal site",
+    title: "Portfolio OS",
+    eyebrow: "Personal Site",
     description: "The site you are on now: writing, work, identity, and proof of taste in one place.",
     status: "repo coming soon",
   },
   {
-    title: "next app slot",
-    eyebrow: "placeholder",
+    title: "Next App Slot",
+    eyebrow: "Placeholder",
     description: "Reserved for the next GitHub repo worth showing instead of burying in a resume bullet.",
     status: "add repo link",
   },
@@ -71,10 +71,10 @@ export default function AppsPage() {
 
         <section className="mb-14 text-center">
           <p className="mb-4 font-mono text-xs font-black tracking-[0.2em] text-[#EA580C]">
-            my apps
+            My Apps
           </p>
           <h1 className="font-display text-5xl font-black leading-none text-stone-900 md:text-7xl">
-            things i&apos;ve built
+            Things I&apos;ve Built
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-stone-500 md:text-base">
             A working drawer for projects, prototypes, and repos. The links can get swapped in as each repo is ready.

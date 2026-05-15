@@ -197,11 +197,11 @@ type NewsItem = {
 const latestBlogPost = blogPosts[blogPosts.length - 1]
 
 const heroNewsItems: NewsItem[] = [
-  { label: "open to opportunities as a forward deployed AI engineer" },
+  { label: "Open to opportunities as a forward deployed AI engineer" },
   ...(latestBlogPost
     ? [
         {
-          label: `new blog post out: ${latestBlogPost.title.toLowerCase()}. click here to read it`,
+          label: `New blog post out: ${latestBlogPost.title}. Click here to read it`,
           href: latestBlogPost.href,
         },
       ]
@@ -265,12 +265,12 @@ export default function Hero() {
           className="mb-10 mx-auto flex max-w-3xl overflow-hidden rounded-full border-2 border-white/45 bg-white/15 text-white shadow-[0_5px_0_0_rgba(154,52,18,0.28)] backdrop-blur-sm"
           aria-label="breaking news updates"
         >
-          <span className="shrink-0 border-r-2 border-white/35 bg-white px-4 py-2 text-xs font-black lowercase tracking-[0.18em] text-[#EA580C]">
-            breaking
+          <span className="shrink-0 border-r-2 border-white/35 bg-white px-4 py-2 text-xs font-black tracking-[0.18em] text-[#EA580C]">
+            🚨 BREAKING
           </span>
           <div className="relative flex min-w-0 flex-1 overflow-hidden">
             <motion.div
-              className="flex w-max items-center gap-8 whitespace-nowrap py-2 pl-6 pr-8 text-sm font-semibold lowercase"
+              className="flex w-max items-center gap-8 whitespace-nowrap py-2 pl-6 pr-8 text-sm font-semibold"
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
             >
@@ -306,7 +306,7 @@ export default function Hero() {
             className="block text-white"
             style={{ fontSize: "clamp(3rem, 10vw, 8.5rem)", fontWeight: 900 }}
           >
-            KRUTHIK BS
+            KRUTHIK B.S.
           </span>
           <span
             className="block text-white"

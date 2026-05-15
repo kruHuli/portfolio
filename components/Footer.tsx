@@ -52,7 +52,7 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="text-center">
             <div className="whitespace-nowrap text-[clamp(1.35rem,4vw,2rem)] leading-none tracking-wide text-white">
-              <span className="font-signature">Kruthik BS Hulisandra</span>{" "}
+              <span className="font-signature">Kruthik B.S. Hulisandra</span>{" "}
               <span style={{ fontFamily: '"Times New Roman", Times, serif' }}>MBS, BS</span>
             </div>
             <p className="text-white/60 text-xs font-mono font-bold">
@@ -87,7 +87,7 @@ export default function Footer() {
         </motion.div>
 
         <div className="mt-10 pt-6 border-t-2 border-white/20 flex flex-col items-center justify-center gap-3 text-white/50 text-xs font-mono font-bold">
-          <p>© {new Date().getFullYear()} Kruthik BS Hulisandra</p>
+          <p>© {new Date().getFullYear()} Kruthik B.S. Hulisandra</p>
           <p>built with next.js · tailwind · framer motion</p>
         </div>
       </div>

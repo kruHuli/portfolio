@@ -33,10 +33,10 @@ export default function BlogPage() {
 
         <section className="mb-14 text-center">
           <p className="mb-4 font-mono text-xs font-black tracking-[0.2em] text-[#EA580C]">
-            more of my thoughts
+            More of My Thoughts
           </p>
           <h1 className="font-display text-5xl font-black leading-none text-stone-900 md:text-7xl">
-            blog
+            Blog
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-stone-500 md:text-base">
             Essays, ramblings, weird observations, and everything else I&apos;m thinking through in public.
