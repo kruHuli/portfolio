@@ -31,7 +31,7 @@ const signatureFont = Great_Vibes({
 })
 
 export const metadata: Metadata = {
-  title: "Kruthik BS Hulisandra — Portfolio",
+  title: "Kruthik B.S. Hulisandra — Portfolio",
   description: "A no BS kinda guy. Engineering, product, and strategy.",
 }
 
