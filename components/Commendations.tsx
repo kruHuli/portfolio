@@ -16,6 +16,8 @@ const ITEMS: Item[] = [
     text: "Kruthik partnered with us at the Phillies as a team lead on an extensive research and analysis project examining our retail data. He is an effective leader and gifted analyst. His team produced actionable insights in a condensed timeframe as a result of his management. Kruthik's own analysis stood out amongst the group. He would be an asset to any organization's analytics/data team. I would be happy to speak to anyone personally to further endorse his skillset.",
   },
   { type: "image", src: "/awards/graduation.jpg", alt: "Rutgers graduation" },
+  { type: "image", src: "/awards/chairman.jpg", alt: "Model UN Director — Kruthik Hulisandra" },
+  { type: "image", src: "/awards/muncert.jpg", alt: "Model UN award ceremony with certificates" },
   { type: "image", src: "/awards/rec-leadership-plaque.jpeg", alt: "Rutgers Recreation Leadership Excellence Award plaque" },
   { type: "image", src: "/awards/njt-team.jpeg", alt: "New Jersey Titans cricket team" },
   { type: "image", src: "/awards/rec-leadership-award.jpeg", alt: "Rutgers Recreation Leadership Excellence Award ceremony" },
