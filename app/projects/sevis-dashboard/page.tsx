@@ -61,7 +61,7 @@ export default function SevisDashboardPage() {
             SEVIS Data Dashboard
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-stone-500 md:text-base">
-            Interactive Tableau dashboard exploring international student enrollment data across institutions, visa categories, and demographics.
+            Built to make a case. Presented to senior leadership at Rutgers Recreation using SEVIS international student enrollment data to demonstrate demand for a cricket league. Funding doubled.
           </p>
         </section>
 

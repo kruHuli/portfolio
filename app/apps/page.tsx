@@ -34,7 +34,7 @@ const apps = [
   {
     title: "SEVIS Data Dashboard",
     eyebrow: "Data Visualization",
-    description: "Interactive Tableau dashboard exploring international student enrollment data across institutions, visa categories, and demographics.",
+    description: "Presented to senior leadership at Rutgers Recreation to make the case for cricket. Used SEVIS enrollment data to show the international student population that would fill the league. Funding doubled.",
     status: "view dashboard",
     href: "/projects/sevis-dashboard",
   },
