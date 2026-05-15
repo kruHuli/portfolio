@@ -158,13 +158,60 @@ const BG: P[] = [
   { t: 1, s: { right: "42%", top: "20%"   }, r: -8,  w: 52, o: 0.07 },
 ]
 
+// Denser layout — used for Experience. Extra t=10/21/32 entries map to Cricket (index 10 of 11).
+const BG_DENSE: P[] = [
+  // top band
+  { t: 0,  s: { left: "2%",   top: "2%"    }, r: -12, w: 72, o: 0.20 },
+  { t: 10, s: { left: "12%",  top: "4%"    }, r: 18,  w: 80, o: 0.19 },
+  { t: 2,  s: { left: "24%",  top: "2%"    }, r: -6,  w: 62, o: 0.17 },
+  { t: 21, s: { left: "40%",  top: "3%"    }, r: -22, w: 86, o: 0.20 },
+  { t: 4,  s: { left: "57%",  top: "2%"    }, r: 10,  w: 68, o: 0.18 },
+  { t: 10, s: { right: "18%", top: "4%"    }, r: 30,  w: 76, o: 0.17 },
+  { t: 6,  s: { right: "4%",  top: "2%"    }, r: -8,  w: 66, o: 0.19 },
+  // second row
+  { t: 7,  s: { left: "1%",   top: "16%"   }, r: 8,   w: 70, o: 0.16 },
+  { t: 32, s: { left: "14%",  top: "18%"   }, r: -30, w: 82, o: 0.18 },
+  { t: 3,  s: { left: "30%",  top: "16%"   }, r: 14,  w: 60, o: 0.14 },
+  { t: 21, s: { left: "48%",  top: "18%"   }, r: 6,   w: 78, o: 0.17 },
+  { t: 9,  s: { right: "26%", top: "17%"   }, r: -11, w: 64, o: 0.15 },
+  { t: 10, s: { right: "8%",  top: "15%"   }, r: -25, w: 84, o: 0.19 },
+  // left column
+  { t: 5,  s: { left: "1%",   top: "33%"   }, r: -10, w: 66, o: 0.17 },
+  { t: 10, s: { left: "2%",   top: "50%"   }, r: 35,  w: 88, o: 0.20 },
+  { t: 1,  s: { left: "1%",   top: "68%"   }, r: -5,  w: 64, o: 0.16 },
+  { t: 32, s: { left: "10%",  top: "42%"   }, r: 15,  w: 70, o: 0.12 },
+  // right column
+  { t: 8,  s: { right: "1%",  top: "33%"   }, r: 12,  w: 68, o: 0.17 },
+  { t: 21, s: { right: "2%",  top: "50%"   }, r: -28, w: 84, o: 0.19 },
+  { t: 3,  s: { right: "1%",  top: "68%"   }, r: 8,   w: 62, o: 0.16 },
+  { t: 10, s: { right: "11%", top: "42%"   }, r: -15, w: 72, o: 0.13 },
+  // interior fill
+  { t: 10, s: { left: "22%",  top: "32%"   }, r: -18, w: 78, o: 0.10 },
+  { t: 0,  s: { left: "38%",  top: "28%"   }, r: 8,   w: 58, o: 0.08 },
+  { t: 21, s: { right: "24%", top: "30%"   }, r: 20,  w: 80, o: 0.10 },
+  { t: 5,  s: { left: "26%",  top: "52%"   }, r: -10, w: 62, o: 0.08 },
+  { t: 10, s: { left: "44%",  top: "48%"   }, r: 12,  w: 76, o: 0.10 },
+  { t: 7,  s: { right: "26%", top: "55%"   }, r: -8,  w: 56, o: 0.07 },
+  { t: 32, s: { left: "32%",  top: "70%"   }, r: 25,  w: 82, o: 0.10 },
+  { t: 2,  s: { right: "32%", top: "68%"   }, r: -12, w: 60, o: 0.08 },
+  // bottom band
+  { t: 10, s: { left: "3%",   bottom: "3%" }, r: 20,  w: 84, o: 0.20 },
+  { t: 4,  s: { left: "18%",  bottom: "2%" }, r: -8,  w: 66, o: 0.17 },
+  { t: 21, s: { left: "36%",  bottom: "4%" }, r: 14,  w: 80, o: 0.19 },
+  { t: 6,  s: { left: "54%",  bottom: "2%" }, r: -5,  w: 62, o: 0.16 },
+  { t: 10, s: { right: "18%", bottom: "3%" }, r: -32, w: 86, o: 0.20 },
+  { t: 8,  s: { right: "3%",  bottom: "4%" }, r: 10,  w: 68, o: 0.18 },
+]
+
 type Props = {
   icons: React.ComponentType<{ className?: string }>[]
   iconColor: string
   dotColor?: string
+  dense?: boolean
 }
 
-export default function ScatteredIconBg({ icons, iconColor, dotColor = "rgba(0,0,0,0.9)" }: Props) {
+export default function ScatteredIconBg({ icons, iconColor, dotColor = "rgba(0,0,0,0.9)", dense = false }: Props) {
+  const items = dense ? BG_DENSE : BG
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none select-none" aria-hidden="true">
       <div
@@ -174,7 +221,7 @@ export default function ScatteredIconBg({ icons, iconColor, dotColor = "rgba(0,0
           backgroundSize: "32px 32px",
         }}
       />
-      {BG.map(({ t, s, r, w, o }, i) => {
+      {items.map(({ t, s, r, w, o }, i) => {
         const Icon = icons[t % icons.length]
         return (
           <div

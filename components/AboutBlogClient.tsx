@@ -1,6 +1,5 @@
 "use client"
 
-import Link from "next/link"
 import { useState } from "react"
 import { motion } from "framer-motion"
 import ScatteredIconBg, { OpenBook, Laptop, Brain } from "@/components/ScatteredIconBg"
@@ -112,7 +111,7 @@ function MarkdownContent({ markdown }: { markdown: string }) {
               className="overflow-hidden"
             >
               <div className="space-y-5 pt-6">
-                {longBlocks.map((block, index) => renderMarkdownBlock(block, `long-${index}`, true))}
+                {longBlocks.map((block, index) => renderMarkdownBlock(block, `long-${index}`, false))}
               </div>
             </motion.div>
           )}
@@ -122,19 +121,6 @@ function MarkdownContent({ markdown }: { markdown: string }) {
   )
 }
 
-function MoreThoughts() {
-  return (
-    <div className="mt-6 flex justify-center">
-      <Link
-        href="/blog"
-        className="inline-flex items-center gap-2 rounded-xl border-2 border-[#EA580C] bg-[#EA580C] px-5 py-3 text-sm font-black text-white shadow-[0_5px_0_0_#9A3412] transition-all duration-75 hover:bg-[#F97316] active:translate-y-[3px] active:shadow-[0_2px_0_0_#9A3412]"
-      >
-        Read More of My Thoughts
-        <span className="text-base leading-none">→</span>
-      </Link>
-    </div>
-  )
-}
 
 export default function AboutBlogClient({ markdown }: { markdown: string }) {
   return (
@@ -157,7 +143,6 @@ export default function AboutBlogClient({ markdown }: { markdown: string }) {
           <p className="mx-auto mt-4 max-w-lg text-sm font-medium leading-relaxed text-stone-500">
             A quick read on how I work, what I build, and why I&apos;m useful in messy rooms.
           </p>
-          <MoreThoughts />
         </motion.div>
 
         <motion.article

@@ -1,4 +1,4 @@
-# i turn ambiguity into useful systems
+# I Turn Ambiguity Into Useful Systems
 
 ## Short Version
 
@@ -6,40 +6,34 @@ I walk into ambiguous situations, figure out what's actually broken, build somet
 
 **Stack:** Python, SQL, R, C++. PyTorch, scikit-learn, Flask. Anthropic MCP, OpenAI, Perplexity. Multi-agent orchestration, RAG, agentic workflows, LLM evaluation.
 
-## Full story
+## Full Story
 
-i'm an applied AI engineer who has operated at the intersection of technical execution and business reality since before i had a title for it.
+I'm an applied AI engineer who has operated at the intersection of technical execution and business reality since before I had a title for it.
 
-at AdvantageGEO i joined as employee number five and the first AI hire. there was a vision. there was no product. i turned one into the other. designed and shipped a 6-agent AI pipeline that automated GEO audits for SMB clients, built the RAG architecture that grounded outputs in real optimization data, and delivered a 17% visibility increase for an early customer within two months. the demo i built closed paying customers. the infrastructure and full-stack engineers were hired around what i had already shipped.
+At AdvantageGEO I joined as employee number five and the first AI hire. There was a vision. There was no product. I turned one into the other. Designed and shipped a 6-agent AI pipeline that automated GEO audits for SMB clients, built the RAG architecture that grounded outputs in real optimization data, and delivered a 17% visibility increase for an early customer within two months. The demo I built closed paying customers. The infrastructure and full-stack engineers were hired around what I had already shipped.
 
-at Eltropy i was the bridge between AI product decisions and non-technical stakeholders. i analyzed 50,000 real customer conversations, documented pre-deployment bugs before they became production problems, and authored an ethical AI framework adopted across the entire product. i didn't just report findings. i changed how the team operated.
+At Eltropy I was the bridge between AI product decisions and non-technical stakeholders. I analyzed 50,000 real customer conversations, documented pre-deployment bugs before they became production problems, and authored an ethical AI framework adopted across the entire product. I didn't just report findings. I changed how the team operated.
 
-at Rutgers Recreation i built a cricket league from scratch. the resources i had were two basketball courts and a vision. i designed the operations, recruited the players, trained the officials, and figured out the logistics nobody had figured out before me. it became a 120-person league running every sunday night. i received a university leadership award for creating it.
+At Rutgers Recreation I built a cricket league from scratch. The resources I had were two basketball courts and a vision. I designed the operations, recruited the players, trained the officials, and figured out the logistics nobody had figured out before me. It became a 120-person league running every Sunday night. I received a university leadership award for creating it.
 
-the pattern is the same every time. ambiguous situation. real constraints. ship something that works. translate it for everyone in the room.
+The pattern is the same every time. Ambiguous situation. Real constraints. Ship something that works. Translate it for everyone in the room.
 
-## why the intersection
+## Why the Intersection
 
-i moved from india to america at five. studied at the intersection of business and technology by design. have spent my career being the person who is technical enough to build and business-minded enough to know what's worth building.
+I moved from India to America at five. Studied at the intersection of business and technology by design. Have spent my career being the person who is technical enough to build and business-minded enough to know what's worth building.
 
-i'm never the most technical person in the room. i'm the person who makes the most technical person in the room more effective.
+I'm never the most technical person in the room. I'm the person who makes the most technical person in the room more effective.
 
-## what i build
+## What I Build
 
-multi-agent systems. RAG pipelines. LLM evaluation frameworks. rapid prototypes that answer real questions under real constraints. i built testingDarwin, an evolutionary LLM tuning pipeline, under a $1.50 API budget because constraints are just problems with smaller margins.
+Multi-agent systems. RAG pipelines. LLM evaluation frameworks. Rapid prototypes that answer real questions under real constraints. I built testingDarwin, an evolutionary LLM tuning pipeline, under a $1.50 API budget because constraints are just problems with smaller margins.
 
-**stack:** Python, SQL, R, C++. PyTorch, scikit-learn, Flask. Anthropic MCP, OpenAI, Perplexity. multi-agent orchestration, RAG, agentic workflows, LLM evaluation.
+**Stack:** Python, SQL, R, C++. PyTorch, scikit-learn, Flask. Anthropic MCP, OpenAI, Perplexity. Multi-agent orchestration, RAG, agentic workflows, LLM evaluation.
 
-## the part that doesn't fit a resume
+## The Part That Doesn't Fit a Resume
 
-i think in systems and i write to process what i'm seeing. i have a substack where i work things out in public. i study how thomas edison built the world's first industrial research lab and apply it to how i think about team culture. i came from a farming village in karnataka where my name was assigned by the position of the moon at my birth.
+I think in systems and I write to process what I'm seeing. I have a Substack where I work things out in public. I study how Thomas Edison built the world's first industrial research lab and apply it to how I think about team culture. I came from a farming village in Karnataka where my name was assigned by the position of the moon at my birth.
 
-i've attended 17 schools in my life. i tell you this not because it's professionally relevant but because i operate on a cultural level. you have to earn trust in rooms where nobody knows you yet. you have to read what's actually happening underneath what people are saying. you have to know when to build and when to ask one more question.
+I've attended 17 schools in my life. I tell you this not because it's professionally relevant but because I operate on a cultural level. I had to earn trust in rooms where nobody knew me yet. I had to read what was actually happening underneath what people were saying. I had to know when to build and when to ask one more question.
 
-that's a skill set built over a lifetime of never quite fitting into any single category.
-
-i've been training for this my whole life without knowing that's what it was called.
-
----
-
-*based in San Jose, CA.*
+That's a skill set built over a lifetime of never quite fitting into any single category. I've been training for this my whole life without knowing that's what it was called. Based in San Jose, CA.

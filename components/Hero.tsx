@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { blogPosts } from "@/lib/blog-posts"
 
 // ── SVG icons (emoji-style: filled, minimal, bold) ────────────────────────────
 
@@ -194,18 +193,8 @@ type NewsItem = {
   href?: string
 }
 
-const latestBlogPost = blogPosts[blogPosts.length - 1]
-
 const heroNewsItems: NewsItem[] = [
   { label: "Open to opportunities as a forward deployed AI engineer" },
-  ...(latestBlogPost
-    ? [
-        {
-          label: `New blog post out: ${latestBlogPost.title}. Click here to read it`,
-          href: latestBlogPost.href,
-        },
-      ]
-    : []),
 ]
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
@@ -274,7 +263,7 @@ export default function Hero() {
               animate={{ x: ["0%", "-50%"] }}
               transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
             >
-              {[...heroNewsItems, ...heroNewsItems].map((item, index) => (
+              {[...Array(8)].flatMap(() => heroNewsItems).map((item, index) => (
                 <span key={`${item.label}-${index}`} className="inline-flex items-center gap-8">
                   {item.href ? (
                     <a
@@ -315,23 +304,10 @@ export default function Hero() {
             HULISANDRA
           </span>
           <span
-            className="flex items-center justify-center gap-4 sm:gap-5 mt-3"
-            style={{ fontSize: "clamp(1.2rem, 4vw, 3.4rem)" }}
+            className="block text-white/80 mt-2"
+            style={{ fontFamily: '"Times New Roman", Times, serif', fontSize: "clamp(1.2rem, 4vw, 3.4rem)", fontWeight: 900, letterSpacing: "0.08em" }}
           >
-            <a
-              href="#"
-              className="relative inline-flex min-w-[2.85em] items-center justify-center rounded-lg border-2 border-white/55 bg-white/15 text-white shadow-[0_4px_0_0_rgba(154,52,18,0.35)] transition-colors hover:bg-white/25"
-              style={{ fontFamily: '"Times New Roman", Times, serif', fontWeight: 900, letterSpacing: "0.08em", lineHeight: 0.88, padding: "0.2em 0.62em 0.16em" }}
-            >
-              MBS
-            </a>
-            <a
-              href="#"
-              className="relative inline-flex min-w-[2.85em] items-center justify-center rounded-lg border-2 border-white/55 bg-white/15 text-white shadow-[0_4px_0_0_rgba(154,52,18,0.35)] transition-colors hover:bg-white/25"
-              style={{ fontFamily: '"Times New Roman", Times, serif', fontWeight: 900, letterSpacing: "0.08em", lineHeight: 0.88, padding: "0.2em 0.62em 0.16em" }}
-            >
-              BS
-            </a>
+            MBS, BS
           </span>
         </motion.h1>
 

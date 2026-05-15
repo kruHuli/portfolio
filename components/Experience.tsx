@@ -18,6 +18,7 @@ export default function Experience() {
         icons={[Basketball, SoccerBall, GolfFlag, LacrosseStick, RobotHead, OpenBook, Laptop, Medal, Trophy, Brain, Cricket]}
         iconColor="#92400E"
         dotColor="rgba(120,60,0,0.9)"
+        dense
       />
       <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div
@@ -187,7 +188,8 @@ export default function Experience() {
           className="mt-12 text-center"
         >
           <a
-            href="#"
+            href="/resume.pdf"
+            download="Kruthik_Hulisandra_Resume.pdf"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#EA580C] text-white font-black text-sm border-2 border-[#C2410C] shadow-[0_5px_0px_0px_#9A3412] active:shadow-[0_2px_0px_0px_#9A3412] active:translate-y-[3px] hover:bg-[#F97316] transition-all duration-75"
           >
             Download full résumé
