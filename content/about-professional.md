@@ -34,7 +34,7 @@ multi-agent systems. RAG pipelines. LLM evaluation frameworks. rapid prototypes 
 
 i think in systems and i write to process what i'm seeing. i have a substack where i work things out in public. i study how thomas edison built the world's first industrial research lab and apply it to how i think about team culture. i came from a farming village in karnataka where my name was assigned by the position of the moon at my birth.
 
-i tell you this not because it's professionally relevant but because i operate on a cultural level. you have to earn trust in rooms where nobody knows you yet. you have to read what's actually happening underneath what people are saying. you have to know when to build and when to ask one more question.
+i've attended 17 schools in my life. i tell you this not because it's professionally relevant but because i operate on a cultural level. you have to earn trust in rooms where nobody knows you yet. you have to read what's actually happening underneath what people are saying. you have to know when to build and when to ask one more question.
 
 that's a skill set built over a lifetime of never quite fitting into any single category.
 
