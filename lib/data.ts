@@ -8,6 +8,12 @@ export type TimelineEvent = {
   category: "education" | "work" | "project" | "milestone"
 }
 
+export type SubRole = {
+  title: string
+  period: string
+  bullets: string[]
+}
+
 export type Experience = {
   id: string
   company: string
@@ -17,6 +23,7 @@ export type Experience = {
   description: string[]
   tech: string[]
   current?: boolean
+  subRoles?: SubRole[]
 }
 
 export type DemoVideo = {
@@ -120,6 +127,83 @@ export const experiences: Experience[] = [
   },
   {
     id: "e2",
+    company: "Axial Sports Analytics",
+    role: "ML Capstone Team Lead",
+    period: "Sep 2025 – Dec 2025",
+    location: "Remote",
+    description: [
+      "Led a 3-person ML capstone team building an end-to-end forecasting system for NBA player performance and MLB team outcomes from travel-distance and rest data",
+      "Owned the TCN+LSTM architecture, benchmarking against linear, fixed-effects, and pure TCN baselines; the added LSTM layer captured sequential fatigue effects that improved R² by ~3% over the TCN-only model",
+      "🏆 Team Lead Certificate of Achievement Recipient",
+    ],
+    tech: ["PyTorch", "TCN", "LSTM", "Python", "Sports Analytics", "Time Series"],
+  },
+  {
+    id: "e3",
+    company: "Rutgers Recreation",
+    role: "Intramural Grad Intern (and other roles)",
+    period: "Sep 2021 – May 2025",
+    location: "New Brunswick, NJ",
+    description: [
+      "Led a 50-person referee and supervisor team across 4 venues, 6 nights a week, serving 10,000+ students; built a 3-tier training curriculum and professional development tracker used to drive supervisor promotion decisions",
+      "Launched and scaled an intramural cricket league from scratch, growing participation 3x (60 to 200+ students) in two years while maintaining safety, service quality, and staffing efficiency",
+      "Drove a 43% expansion in sports offerings and nearly 50% growth in participants across the department",
+      "🏅 Rutgers University Recreation Leadership Excellence Award, 2023",
+    ],
+    tech: ["Leadership", "Operations", "Program Design", "Labor Optimization", "Data Analysis"],
+    subRoles: [
+      {
+        title: "Graduate Strategy Intern – IM Sports",
+        period: "Sep 2023 – May 2025",
+        bullets: [
+          "Developed and implemented a survey for the Student Development Task Force targeting 500+ students to assess job satisfaction and identify areas for improvement",
+          "Spearheaded a cross-departmental diversification effort to introduce wheelchair basketball to the Rutgers community, expanding access to adaptive sports",
+          "Established and led an annual cricket tournament, achieving 167% YoY growth through strategic planning, social media campaigning, and customer management",
+        ],
+      },
+      {
+        title: "Intramural Manager",
+        period: "Sep 2022 – Sep 2023",
+        bullets: [
+          "Introduced, promoted, and ran a new cricket league, growing the customer base by 80 unique participants",
+          "Managed 14 sports leagues (~6,000 participants) by hiring, training, and scheduling 60+ officials and supervisors",
+          "Led social media team to boost Instagram reach by 240% in 90 days; recipient of the Rutgers Recreation Leadership Excellence Award",
+        ],
+      },
+      {
+        title: "Intramural Supervisor",
+        period: "Jan 2022 – Aug 2022",
+        bullets: [
+          "Spearheaded creation of a new interdepartmental communication channel to improve operational efficiency",
+          "Supervised a team of referees to ensure safe play and efficient game administration, providing First Aid where needed",
+        ],
+      },
+      {
+        title: "Intramural Official",
+        period: "Sep 2021 – Jan 2022",
+        bullets: [
+          "Officiated volleyball, basketball, soccer, and flag football games across Rutgers University, ensuring fair play and rule adherence",
+          "Oversaw and judged championship matches at SHI Stadium with professionalism and integrity",
+        ],
+      },
+    ],
+  },
+  {
+    id: "e4",
+    company: "New Jersey Titans",
+    role: "Director, Fan Engagement & Social Media",
+    period: "Jul 2024 – Dec 2024",
+    location: "New Brunswick, NJ",
+    description: [
+      "Built and executed a growth engine for the USPL tournament, generating 200K+ reach in 7 days and scaling to ~700K+ impressions during peak live-event windows through structured content sequencing and real-time iteration",
+      "Designed and launched sponsorship infrastructure from scratch, creating a dedicated sponsorship page and generating $5K+ in engagement funding through targeted partner outreach",
+      "Led end-to-end production of a Rutgers cricket event featuring USA national team players, overseeing logistics, venue coordination, merchandising, and live interviews; attracted 100+ attendees",
+      "Developed a 100-day integrated marketing calendar aligning social content, sponsorship outreach, and in-person activations; conducted a competitive brand audit across 55+ U.S. cricket programs and proposed a differentiated rebrand concept",
+    ],
+    tech: ["Content Strategy", "Social Media", "Sponsorship", "Event Production", "Brand Strategy", "Growth Marketing"],
+  },
+  {
+    id: "e5",
     company: "Eltropy Inc",
     role: "AI Product Analyst Intern",
     period: "Jun 2024 – Aug 2024",
@@ -133,16 +217,19 @@ export const experiences: Experience[] = [
     tech: ["NLP", "Python", "JIRA", "RAG", "GenAI", "Sankey Analysis"],
   },
   {
-    id: "e3",
-    company: "Rutgers Recreation",
-    role: "Intramural Sports Graduate Intern",
-    period: "Sep 2021 – May 2025",
+    id: "e6",
+    company: "Philadelphia Phillies via Rutgers MBS Externship",
+    role: "Team Lead & Analyst, Retail Analytics",
+    period: "Sep 2023 – Dec 2023",
     location: "New Brunswick, NJ",
     description: [
-      "Led a 50-person referee and supervisor team across 4 venues, 6 nights a week, serving 10,000+ students; built a 3-tier training curriculum and professional development tracker used to drive supervisor promotion decisions",
-      "Drove a 43% expansion in sports offerings; recipient of the Rutgers University Recreation Leadership Excellence Award, 2023",
+      "Directed and coached a cross-functional team of 5 members with varying levels of data analytics expertise",
+      "Employed Tableau to build weekly dashboards on a dataset exceeding 750,000 records to optimize retail strategies",
+      "Applied psychology research, business intelligence, and machine learning to model and predict customer spending behaviors, delivering actionable insights that shaped retail strategy",
+      "Built an R-based recommendation algorithm contributing to revenue enhancements across all retail stores",
+      "🏆 Fellowship Award for Outstanding Team Lead Recipient",
     ],
-    tech: ["Leadership", "Operations", "Program Design", "Training & Development"],
+    tech: ["Tableau", "R", "Machine Learning", "Retail Analytics", "Business Intelligence"],
   },
 ]
 

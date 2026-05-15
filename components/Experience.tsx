@@ -1,11 +1,13 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { MapPin, Calendar, ArrowUpRight } from "lucide-react"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { MapPin, Calendar, ArrowUpRight, ChevronDown } from "lucide-react"
 import { experiences } from "@/lib/data"
 import { cn } from "@/lib/utils"
 
 export default function Experience() {
+  const [expandedId, setExpandedId] = useState<string | null>(null)
   return (
     <section id="experience" className="py-28 px-6 bg-[#DBEAFE]">
       <div className="max-w-4xl mx-auto">
@@ -33,8 +35,8 @@ export default function Experience() {
               key={exp.id}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.45, delay: i * 0.1 }}
+              viewport={{ once: true, amount: 0.08 }}
+              transition={{ duration: 0.45, delay: 0.05 }}
               className={cn(
                 "group relative rounded-2xl border-2 bg-white transition-all duration-150",
                 "border-[#EA580C] shadow-[5px_5px_0px_0px_#C2410C]",
@@ -73,12 +75,19 @@ export default function Experience() {
 
                 {/* Description */}
                 <ul className="space-y-2.5 mb-5">
-                  {exp.description.map((item, j) => (
-                    <li key={j} className="flex items-start gap-3 text-sm text-stone-600 leading-relaxed font-medium">
-                      <span className="mt-2 w-2 h-2 rounded-full bg-[#EA580C] flex-shrink-0" />
-                      {item}
-                    </li>
-                  ))}
+                  {exp.description.map((item, j) => {
+                    const isAward = item.startsWith("🏅") || item.startsWith("🏆")
+                    return isAward ? (
+                      <li key={j} className="flex items-center gap-2 text-sm font-black text-amber-600 leading-relaxed">
+                        {item}
+                      </li>
+                    ) : (
+                      <li key={j} className="flex items-start gap-3 text-sm text-stone-600 leading-relaxed font-medium">
+                        <span className="mt-2 w-2 h-2 rounded-full bg-[#EA580C] flex-shrink-0" />
+                        {item}
+                      </li>
+                    )
+                  })}
                 </ul>
 
                 {/* Tech stack */}
@@ -92,6 +101,57 @@ export default function Experience() {
                     </span>
                   ))}
                 </div>
+
+                {/* Sub-roles expand */}
+                {exp.subRoles && (
+                  <div className="mt-5 border-t-2 border-orange-100 pt-4">
+                    <button
+                      onClick={() => setExpandedId(expandedId === exp.id ? null : exp.id)}
+                      className="inline-flex items-center gap-2 text-xs font-black text-[#EA580C] hover:text-[#C2410C] transition-colors"
+                    >
+                      <ChevronDown
+                        size={14}
+                        className="transition-transform duration-200"
+                        style={{ transform: expandedId === exp.id ? "rotate(180deg)" : "rotate(0deg)" }}
+                      />
+                      {expandedId === exp.id ? "Hide Other Roles" : `Other Roles (${exp.subRoles.length})`}
+                    </button>
+
+                    <AnimatePresence>
+                      {expandedId === exp.id && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: "auto" }}
+                          exit={{ opacity: 0, height: 0 }}
+                          transition={{ duration: 0.22 }}
+                          className="overflow-hidden"
+                        >
+                          <div className="mt-4 flex flex-col gap-4">
+                            {exp.subRoles.map((role) => (
+                              <div key={role.title} className="rounded-xl border-2 border-orange-100 bg-orange-50 px-4 py-3">
+                                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-1 mb-2">
+                                  <p className="font-display font-black text-stone-800 text-sm">{role.title}</p>
+                                  <span className="flex items-center gap-1 text-[11px] text-stone-400 font-mono font-bold flex-shrink-0">
+                                    <Calendar size={10} />
+                                    {role.period}
+                                  </span>
+                                </div>
+                                <ul className="space-y-1.5">
+                                  {role.bullets.map((b, k) => (
+                                    <li key={k} className="flex items-start gap-2 text-xs text-stone-600 leading-relaxed font-medium">
+                                      <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#EA580C] flex-shrink-0" />
+                                      {b}
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                )}
               </div>
 
               {/* Hover arrow */}
