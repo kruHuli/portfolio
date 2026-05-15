@@ -2,7 +2,7 @@
 
 ## Short version
 
-i walk into ambiguous situations, figure out what's actually broken, build something that works, and make sure everyone from the CTO to the customer understands what just happened. i've done that with half-formed AI product ideas and even a cricket league that started with 2 basketball courts and a drunken challenge from my grad intern at his grad party.
+i walk into ambiguous situations, figure out what's actually broken, build something that works, and make sure everyone from the CTO to the customer understands what just happened. i've done that with half-formed AI product ideas, a cricket league that started with 2 basketball courts and a drunken challenge from my grad intern at his grad party, and a model un conference my principal asked me to build on the bus ride home after watching me win one.
 
 stack: Python, SQL, R, C++. PyTorch, scikit-learn, Flask. Anthropic MCP, OpenAI, Perplexity. multi-agent orchestration, RAG, agentic workflows, LLM evaluation.
 

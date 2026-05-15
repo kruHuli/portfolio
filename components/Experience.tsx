@@ -16,14 +16,14 @@ export default function Experience() {
           transition={{ duration: 0.5 }}
           className="mb-16 text-center"
         >
-          <p className="text-[#EA580C] text-xs font-mono tracking-[0.2em] uppercase mb-4 font-black">
-            Where I&apos;ve been
+          <p className="text-[#EA580C] text-xs font-mono tracking-[0.2em] mb-4 font-black">
+            where i&apos;ve been
           </p>
           <h2 className="font-display text-4xl md:text-5xl font-black text-stone-900">
-            Experience
+            experience
           </h2>
           <p className="mt-4 text-stone-500 max-w-sm mx-auto text-sm leading-relaxed font-medium">
-            Roles, responsibilities, and the stuff that actually shipped.
+            where i&apos;ve worked, what i built, and a few things i&apos;m actually proud of.
           </p>
         </motion.div>
 
