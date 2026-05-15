@@ -7,13 +7,13 @@ import { ArrowUpRight, ChevronDown } from "lucide-react"
 import kruhuliLogo from "@/content/kruhulilogo.png"
 
 const dimensions = [
-  { name: "Clarity",            score: 86.6, color: "bg-green-500" },
-  { name: "Pacing",             score: 69.3, color: "bg-yellow-400" },
-  { name: "Vocabulary",         score: 67.0, color: "bg-yellow-400" },
-  { name: "Confidence",         score: 62.1, color: "bg-orange-400" },
-  { name: "Tone",               score: 56.3, color: "bg-orange-500" },
-  { name: "Disfluency Control", score: 48.6, color: "bg-red-400" },
-  { name: "Storytelling",       score: 45.3, color: "bg-red-500" },
+  { name: "Clarity",            score: 86.6 },
+  { name: "Pacing",             score: 69.3 },
+  { name: "Vocabulary",         score: 67.0 },
+  { name: "Confidence",         score: 62.1 },
+  { name: "Tone",               score: 56.3 },
+  { name: "Disfluency Control", score: 48.6 },
+  { name: "Storytelling",       score: 45.3 },
 ]
 
 const coaches = [
@@ -63,11 +63,60 @@ const stats = [
 
 const stack = ["Python 3.11", "OpenAI Whisper", "Gemma 4 (local)", "wav2vec2", "HuggingFace", "LM Studio", "ffmpeg", "librosa", "VADER Sentiment", "Chart.js"]
 
-function ScoreBar({ score, color }: { score: number; color: string }) {
+function RadarChart() {
+  const cx = 250, cy = 220, R = 150
+  const n = dimensions.length
+  const angle = (i: number) => -Math.PI / 2 + (i * 2 * Math.PI) / n
+  const pt = (i: number, r: number) => ({
+    x: cx + r * Math.cos(angle(i)),
+    y: cy + r * Math.sin(angle(i)),
+  })
+
+  const rings = [0.25, 0.5, 0.75, 1]
+  const toPoints = (level: number) =>
+    dimensions.map((_, i) => { const p = pt(i, R * level); return `${p.x},${p.y}` }).join(" ")
+  const dataPoints = dimensions.map((d, i) => {
+    const p = pt(i, (d.score / 100) * R)
+    return `${p.x},${p.y}`
+  }).join(" ")
+  const labelR = R + 36
+
   return (
-    <div className="w-full bg-stone-100 rounded-full h-2.5 overflow-hidden border border-stone-200">
-      <div className={`h-full rounded-full ${color}`} style={{ width: `${score}%` }} />
-    </div>
+    <svg viewBox="0 0 500 450" className="w-full max-w-md mx-auto">
+      {rings.map((level) => (
+        <polygon key={level} points={toPoints(level)} fill="none" stroke="#e7e5e4" strokeWidth={level === 1 ? 1.5 : 1} />
+      ))}
+      {dimensions.map((_, i) => {
+        const tip = pt(i, R)
+        return <line key={i} x1={cx} y1={cy} x2={tip.x} y2={tip.y} stroke="#d6d3d1" strokeWidth={1} />
+      })}
+      {rings.map((level) => {
+        const p = pt(0, R * level)
+        return (
+          <text key={level} x={p.x + 6} y={p.y} fontSize={8} fill="#a8a29e" fontFamily="ui-monospace, monospace" fontWeight="600" dominantBaseline="middle">
+            {Math.round(level * 100)}
+          </text>
+        )
+      })}
+      <polygon points={dataPoints} fill="#EA580C" fillOpacity={0.18} stroke="#EA580C" strokeWidth={2.5} strokeLinejoin="round" />
+      {dimensions.map((d, i) => {
+        const p = pt(i, (d.score / 100) * R)
+        return <circle key={i} cx={p.x} cy={p.y} r={4.5} fill="#EA580C" stroke="white" strokeWidth={1.5} />
+      })}
+      {dimensions.map((d, i) => {
+        const lp = pt(i, labelR)
+        const anchor = lp.x > cx + 8 ? "start" : lp.x < cx - 8 ? "end" : "middle"
+        const words = d.name.split(" ")
+        return (
+          <text key={i} x={lp.x} y={lp.y} textAnchor={anchor} fontSize={10} fontWeight="800" fill="#292524" fontFamily="ui-monospace, monospace">
+            {words.length === 1
+              ? <tspan dominantBaseline="middle">{words[0]}</tspan>
+              : <><tspan x={lp.x} dy="-0.65em">{words[0]}</tspan><tspan x={lp.x} dy="1.3em">{words[1]}</tspan></>
+            }
+          </text>
+        )
+      })}
+    </svg>
   )
 }
 
@@ -152,15 +201,13 @@ export default function SpeakingAnalysisPage() {
         {/* Score dashboard */}
         <div className="mb-10 rounded-3xl border-2 border-[#EA580C] bg-white shadow-[6px_6px_0_0_#C2410C] p-8">
           <p className="mb-2 font-mono text-xs font-black tracking-[0.12em] text-[#EA580C]">Performance Dashboard</p>
-          <h2 className="font-display text-2xl font-black text-stone-900 mb-8">7-Dimension Speaker Score</h2>
-          <div className="space-y-5">
+          <h2 className="font-display text-2xl font-black text-stone-900 mb-6">7-Dimension Speaker Score</h2>
+          <RadarChart />
+          <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-2 sm:grid-cols-4">
             {dimensions.map((d) => (
-              <div key={d.name}>
-                <div className="flex items-center justify-between mb-1.5">
-                  <span className="text-sm font-black text-stone-700">{d.name}</span>
-                  <span className="font-mono text-sm font-black text-stone-500">{d.score.toFixed(0)}<span className="text-stone-300">/100</span></span>
-                </div>
-                <ScoreBar score={d.score} color={d.color} />
+              <div key={d.name} className="flex items-center gap-2">
+                <span className="font-mono text-sm font-black text-[#EA580C]">{d.score.toFixed(0)}</span>
+                <span className="text-xs font-medium text-stone-600">{d.name}</span>
               </div>
             ))}
           </div>
