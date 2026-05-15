@@ -11,31 +11,31 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
-    title: "testingDarwin",
-    eyebrow: "LLM evaluation",
+    title: "testingdarwin",
+    eyebrow: "llm evaluation",
     description: "Evolutionary prompt tuning for detecting influence strategies in corporate-style email.",
     status: "repo coming soon",
   },
   {
-    title: "AdvantageGEO AI Pipeline",
+    title: "advantagegeo ai pipeline",
     eyebrow: "multi-agent system",
     description: "A 6-agent GEO audit pipeline that turned a loose product idea into something customers could buy.",
     status: "private repo",
   },
   {
-    title: "Axial Sports Analytics",
+    title: "axial sports analytics",
     eyebrow: "forecasting",
     description: "NBA and MLB performance forecasting with travel, rest, and fatigue signals.",
     status: "repo coming soon",
   },
   {
-    title: "Portfolio OS",
+    title: "portfolio os",
     eyebrow: "personal site",
     description: "The site you are on now: writing, work, identity, and proof of taste in one place.",
     status: "repo coming soon",
   },
   {
-    title: "Next app slot",
+    title: "next app slot",
     eyebrow: "placeholder",
     description: "Reserved for the next GitHub repo worth showing instead of burying in a resume bullet.",
     status: "add repo link",
@@ -70,11 +70,11 @@ export default function AppsPage() {
         </nav>
 
         <section className="mb-14 text-center">
-          <p className="mb-4 font-mono text-xs font-black uppercase tracking-[0.2em] text-[#EA580C]">
-            My apps
+          <p className="mb-4 font-mono text-xs font-black tracking-[0.2em] text-[#EA580C]">
+            my apps
           </p>
           <h1 className="font-display text-5xl font-black leading-none text-stone-900 md:text-7xl">
-            Things I&apos;ve built
+            things i&apos;ve built
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-stone-500 md:text-base">
             A working drawer for projects, prototypes, and repos. The links can get swapped in as each repo is ready.
@@ -92,7 +92,7 @@ export default function AppsPage() {
               ].join(" ")}
             >
               <div className="mb-8 flex items-center justify-between gap-4">
-                <span className="rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black uppercase tracking-[0.12em] text-orange-700">
+                <span className="rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black tracking-[0.12em] text-orange-700">
                   {app.eyebrow}
                 </span>
                 <GithubLogo className="h-5 w-5 text-[#EA580C]" />
@@ -108,7 +108,7 @@ export default function AppsPage() {
               </div>
 
               <div className="flex items-center justify-between border-t-2 border-orange-100 pt-5">
-                <span className="font-mono text-xs font-black uppercase tracking-[0.12em] text-stone-400">
+                <span className="font-mono text-xs font-black tracking-[0.12em] text-stone-400">
                   {app.status}
                 </span>
                 <span className="inline-flex items-center gap-2 text-sm font-black text-[#EA580C]">
