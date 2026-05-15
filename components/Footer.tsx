@@ -45,8 +45,8 @@ export default function Footer() {
           transition={{ duration: 0.4 }}
           className="flex flex-col items-center justify-center gap-6"
         >
-          <h2 className="font-display text-3xl font-black lowercase tracking-[0.08em] text-black sm:text-4xl">
-            contact
+          <h2 className="font-display text-3xl font-black text-black sm:text-4xl">
+            Contact
           </h2>
 
           {/* Logo + tagline */}
