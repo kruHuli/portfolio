@@ -11,6 +11,13 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
+    title: "Speaking Studio",
+    eyebrow: "AI Speech Coaching",
+    description: "I fed 200+ of my own recordings into a pipeline — Whisper transcription, wav2vec2 emotion analysis, and three AI coaches scoring me across 7 dimensions. The results are uncomfortable.",
+    status: "view project",
+    href: "/projects/speaking-analysis",
+  },
+  {
     title: "Receipted",
     eyebrow: "Evidence-First Hiring",
     description: "Replaces resumes with verified proof. Write your stories, AI extracts and verifies every skill claim, recruiters get a trust-scored profile they can actually rely on.",
