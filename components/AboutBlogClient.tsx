@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { useState } from "react"
 import { motion } from "framer-motion"
+import ScatteredIconBg, { OpenBook, Laptop, Brain } from "@/components/ScatteredIconBg"
 
 function renderInlineMarkdown(text: string) {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g)
@@ -137,8 +138,9 @@ function MoreThoughts() {
 
 export default function AboutBlogClient({ markdown }: { markdown: string }) {
   return (
-    <section id="about" className="bg-[#FFF7ED] px-6 py-28">
-      <div className="mx-auto max-w-5xl">
+    <section id="about" className="relative bg-[#FFF7ED] px-6 py-28">
+      <ScatteredIconBg icons={[OpenBook, Laptop, Brain]} iconColor="#92400E" dotColor="rgba(120,60,0,0.9)" />
+      <div className="relative z-10 mx-auto max-w-5xl">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

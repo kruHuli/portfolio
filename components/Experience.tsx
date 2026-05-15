@@ -5,12 +5,21 @@ import { motion, AnimatePresence } from "framer-motion"
 import { MapPin, Calendar, ArrowUpRight, ChevronDown } from "lucide-react"
 import { experiences } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import ScatteredIconBg, {
+  Basketball, SoccerBall, GolfFlag, LacrosseStick, RobotHead,
+  OpenBook, Laptop, Medal, Trophy, Brain, Cricket,
+} from "@/components/ScatteredIconBg"
 
 export default function Experience() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   return (
-    <section id="experience" className="py-28 px-6 bg-[#DBEAFE]">
-      <div className="max-w-4xl mx-auto">
+    <section id="experience" className="relative py-28 px-6 bg-[#FFF7ED]">
+      <ScatteredIconBg
+        icons={[Basketball, SoccerBall, GolfFlag, LacrosseStick, RobotHead, OpenBook, Laptop, Medal, Trophy, Brain, Cricket]}
+        iconColor="#92400E"
+        dotColor="rgba(120,60,0,0.9)"
+      />
+      <div className="relative z-10 max-w-4xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -153,6 +162,13 @@ export default function Experience() {
                   </div>
                 )}
               </div>
+
+              {/* Cricket watermark on Rutgers card */}
+              {exp.id === "e3" && (
+                <div className="absolute bottom-5 right-6 opacity-[0.08] pointer-events-none" style={{ width: 72, height: 72, color: "#92400E" }}>
+                  <Cricket className="w-full h-full" />
+                </div>
+              )}
 
               {/* Hover arrow */}
               <div className="absolute top-5 right-5 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
