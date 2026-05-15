@@ -28,7 +28,7 @@ function renderInlineMarkdown(text: string) {
   })
 }
 
-function renderMarkdownBlock(block: string, key: string) {
+function renderMarkdownBlock(block: string, key: string, applyLowercase = false) {
   const trimmed = block.trim()
   if (!trimmed) return null
 
@@ -46,14 +46,14 @@ function renderMarkdownBlock(block: string, key: string) {
 
   if (trimmed.startsWith("## ")) {
     return (
-      <h4 key={key} className="pt-4 font-display text-xl font-black lowercase leading-tight text-[#EA580C] sm:text-2xl">
+      <h4 key={key} className={`pt-4 font-display text-xl font-black leading-tight text-[#EA580C] sm:text-2xl${applyLowercase ? " lowercase" : ""}`}>
         {trimmed.slice(3)}
       </h4>
     )
   }
 
   return (
-    <p key={key} className="text-sm font-medium lowercase leading-7 text-stone-600 sm:text-base">
+    <p key={key} className={`text-sm font-medium leading-7 text-stone-600 sm:text-base${applyLowercase ? " lowercase" : ""}`}>
       {renderInlineMarkdown(trimmed.replace(/\n/g, " "))}
     </p>
   )
@@ -83,7 +83,7 @@ function MarkdownContent({ markdown }: { markdown: string }) {
   return (
     <div>
       <div className="space-y-5">
-        {shortBlocks.map((block, index) => renderMarkdownBlock(block, `short-${index}`))}
+        {shortBlocks.map((block, index) => renderMarkdownBlock(block, `short-${index}`, false))}
       </div>
 
       {longBlocks.length > 0 && (
@@ -94,7 +94,7 @@ function MarkdownContent({ markdown }: { markdown: string }) {
             className="inline-flex items-center gap-2 rounded-xl border-2 border-[#EA580C] bg-orange-100 px-4 py-2 text-sm font-black text-[#EA580C] transition-all duration-150 hover:bg-orange-200"
             aria-expanded={longVersionOpen}
           >
-            {longVersionOpen ? "hide the full story" : "read the full story"}
+            {longVersionOpen ? "Hide the Full Story" : "Read the Full Story"}
             <span
               className="text-base leading-none transition-transform duration-200"
               style={{ transform: longVersionOpen ? "rotate(45deg)" : "rotate(0deg)" }}
@@ -111,7 +111,7 @@ function MarkdownContent({ markdown }: { markdown: string }) {
               className="overflow-hidden"
             >
               <div className="space-y-5 pt-6">
-                {longBlocks.map((block, index) => renderMarkdownBlock(block, `long-${index}`))}
+                {longBlocks.map((block, index) => renderMarkdownBlock(block, `long-${index}`, true))}
               </div>
             </motion.div>
           )}
@@ -128,7 +128,7 @@ function MoreThoughts() {
         href="/blog"
         className="inline-flex items-center gap-2 rounded-xl border-2 border-[#EA580C] bg-[#EA580C] px-5 py-3 text-sm font-black text-white shadow-[0_5px_0_0_#9A3412] transition-all duration-75 hover:bg-[#F97316] active:translate-y-[3px] active:shadow-[0_2px_0_0_#9A3412]"
       >
-        read more of my thoughts
+        Read More of My Thoughts
         <span className="text-base leading-none">→</span>
       </Link>
     </div>
@@ -146,14 +146,14 @@ export default function AboutBlogClient({ markdown }: { markdown: string }) {
           transition={{ duration: 0.5 }}
           className="mb-12 text-center"
         >
-          <p className="mb-4 font-mono text-xs font-black tracking-[0.2em] text-[#EA580C] lowercase">
-            about me
+          <p className="mb-4 font-mono text-xs font-black tracking-[0.2em] text-[#EA580C]">
+            About Me
           </p>
-          <h2 className="font-display text-4xl font-black lowercase text-stone-900 md:text-5xl">
-            i turn ambiguity into useful systems
+          <h2 className="font-display text-4xl font-black text-stone-900 md:text-5xl">
+            I Turn Ambiguity Into Useful Systems
           </h2>
-          <p className="mx-auto mt-4 max-w-lg text-sm font-medium lowercase leading-relaxed text-stone-500">
-            a quick read on how i work, what i build, and why i&apos;m useful in messy rooms.
+          <p className="mx-auto mt-4 max-w-lg text-sm font-medium leading-relaxed text-stone-500">
+            A quick read on how I work, what I build, and why I&apos;m useful in messy rooms.
           </p>
           <MoreThoughts />
         </motion.div>
@@ -166,8 +166,8 @@ export default function AboutBlogClient({ markdown }: { markdown: string }) {
           className="rounded-3xl border-2 border-[#EA580C] bg-white shadow-[7px_7px_0_0_#C2410C]"
         >
           <div className="border-b-2 border-[#EA580C] px-6 py-5 sm:px-8">
-            <span className="inline-flex rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black lowercase tracking-[0.12em] text-orange-700">
-              snapshot
+            <span className="inline-flex rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black tracking-[0.12em] text-orange-700">
+              Snapshot
             </span>
           </div>
 
