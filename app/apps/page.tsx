@@ -69,10 +69,10 @@ export default function AppsPage() {
 
         <section className="mb-14 text-center">
           <p className="mb-4 font-mono text-xs font-black tracking-[0.2em] text-[#EA580C]">
-            My Apps
+            My Projects
           </p>
           <h1 className="font-display text-5xl font-black leading-none text-stone-900 md:text-7xl">
-            Things I&apos;ve Built
+            My Projects
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-stone-500 md:text-base">
             A working drawer for projects, prototypes, and repos. The links can get swapped in as each repo is ready.

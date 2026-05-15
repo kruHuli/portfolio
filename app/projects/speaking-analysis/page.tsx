@@ -173,7 +173,7 @@ export default function SpeakingAnalysisPage() {
             <Image src={kruhuliLogo} alt="Kruhuli logo" width={1024} height={1024} className="h-[44px] w-[126px] object-cover" priority />
           </Link>
           <Link href="/apps" className="rounded-xl border-2 border-[#EA580C] bg-white px-4 py-2 text-sm font-black text-[#EA580C] transition-colors hover:bg-orange-100">
-            ← Back to Apps
+            ← Back to Projects
           </Link>
         </nav>
 
