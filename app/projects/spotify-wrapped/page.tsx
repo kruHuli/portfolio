@@ -28,7 +28,7 @@ const charts: { src: string; alt: string; caption: string }[] = [
   {
     src: "/spotify-charts/theme-dist.png",
     alt: "Theme distribution histogram",
-    caption: "Radar of theme share across 2024 plays. Romantic takes up 28.9% of listening time, more than Empowered (17.4%) and Uplifting (15.1%) combined.",
+    caption: "Radar of theme share across 2024 plays. Romantic dominates at 28.9%, nearly double the next closest theme (Empowered at 17.4%).",
   },
   {
     src: "/spotify-charts/theme-energy.png",
