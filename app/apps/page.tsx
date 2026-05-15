@@ -11,20 +11,6 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
-    title: "testingDarwin",
-    eyebrow: "LLM Evaluation",
-    description: "Evolutionary prompt tuning for detecting influence strategies in corporate-style email.",
-    status: "repo coming soon",
-    href: null,
-  },
-  {
-    title: "AdvantageGEO AI Pipeline",
-    eyebrow: "Multi-Agent System",
-    description: "A 6-agent GEO audit pipeline that turned a loose product idea into something customers could buy.",
-    status: "private repo",
-    href: null,
-  },
-  {
     title: "Actual Wrapped 2021–2025",
     eyebrow: "Data Analysis · ML",
     description: "Five years of personal Spotify data: theme distributions, skip-energy correlations, and a gradient-boosted skip predictor with SHAP explainability.",
@@ -32,18 +18,11 @@ const apps = [
     href: "/projects/spotify-wrapped",
   },
   {
-    title: "Axial Sports Analytics",
-    eyebrow: "Forecasting",
-    description: "NBA and MLB performance forecasting with travel, rest, and fatigue signals.",
-    status: "repo coming soon",
-    href: null,
-  },
-  {
-    title: "Portfolio OS",
-    eyebrow: "Personal Site",
-    description: "The site you are on now: writing, work, identity, and proof of taste in one place.",
-    status: "repo coming soon",
-    href: null,
+    title: "SEVIS Data Dashboard",
+    eyebrow: "Data Visualization",
+    description: "Interactive Tableau dashboard exploring international student enrollment data across institutions, visa categories, and demographics.",
+    status: "view dashboard",
+    href: "/projects/sevis-dashboard",
   },
 ]
 
@@ -87,7 +66,7 @@ export default function AppsPage() {
         </section>
 
         <section className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {apps.map((app, index) => {
+          {apps.map((app) => {
             const CardWrapper = app.href
               ? ({ children }: { children: React.ReactNode }) => (
                   <Link href={app.href!} className="block">
@@ -98,11 +77,7 @@ export default function AppsPage() {
             return (
               <CardWrapper key={app.title}>
                 <article
-                  className={[
-                    "group rounded-3xl border-2 border-[#EA580C] bg-white p-6 shadow-[6px_6px_0_0_#C2410C] transition-all duration-150",
-                    "hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#C2410C]",
-                    index === 0 ? "md:col-span-2" : "",
-                  ].join(" ")}
+                  className="group rounded-3xl border-2 border-[#EA580C] bg-white p-6 shadow-[6px_6px_0_0_#C2410C] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#C2410C]"
                 >
                   <div className="mb-8 flex items-center justify-between gap-4">
                     <span className="rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black tracking-[0.12em] text-orange-700">
