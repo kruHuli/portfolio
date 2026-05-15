@@ -339,7 +339,7 @@ export default function Hero() {
             }}
             className="px-8 py-3.5 bg-white text-[#EA580C] font-black rounded-xl text-sm border-2 border-white/80 shadow-[0_5px_0px_0px_rgba(154,52,18,0.5)] active:shadow-[0_2px_0px_0px_rgba(154,52,18,0.5)] active:translate-y-[3px] hover:bg-orange-50 transition-all duration-75"
           >
-            my apps
+            projects
           </button>
           <button
             onClick={() => document.querySelector("#experience")?.scrollIntoView({ behavior: "smooth" })}
