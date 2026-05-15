@@ -11,6 +11,13 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
+    title: "Receipted",
+    eyebrow: "Evidence-First Hiring",
+    description: "Replaces resumes with verified proof. Write your stories, AI extracts and verifies every skill claim, recruiters get a trust-scored profile they can actually rely on.",
+    status: "view project",
+    href: "/projects/receipted",
+  },
+  {
     title: "Actual Wrapped 2021–2025",
     eyebrow: "Data Analysis · ML",
     description: "Five years of personal Spotify data: theme distributions, skip-energy correlations, and a gradient-boosted skip predictor with SHAP explainability.",
