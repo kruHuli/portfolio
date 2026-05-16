@@ -261,7 +261,7 @@ export default function Hero() {
             <motion.div
               className="flex w-max items-center gap-8 whitespace-nowrap py-2 pl-6 pr-8 text-sm font-semibold"
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 21.6, repeat: Infinity, ease: "linear" }}
             >
               {[...Array(8)].flatMap(() => heroNewsItems).map((item, index) => (
                 <span key={`${item.label}-${index}`} className="inline-flex items-center gap-8">
@@ -319,11 +319,7 @@ export default function Hero() {
           className="mt-7 text-white/90 font-sans font-medium italic"
           style={{ fontSize: "clamp(1.05rem, 2.4vw, 1.75rem)" }}
         >
-          {"a no "}
-          <span className="not-italic font-black text-white">
-            BS
-          </span>
-          {" kinda guy."}
+          {"yea i did the degree for the name."}
         </motion.p>
 
         {/* CTAs */}
