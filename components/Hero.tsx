@@ -194,6 +194,7 @@ type NewsItem = {
 }
 
 const heroNewsItems: NewsItem[] = [
+  { label: "I JUST GRADUATED 🎓 🍾" },
   { label: "Open to opportunities as a forward deployed AI engineer" },
 ]
 
@@ -319,7 +320,7 @@ export default function Hero() {
           className="mt-7 text-white/90 font-sans font-medium italic"
           style={{ fontSize: "clamp(1.05rem, 2.4vw, 1.75rem)" }}
         >
-          {"yea i did the degree for the name."}
+          {"(yea i did the degree for the name)"}
         </motion.p>
 
         {/* CTAs */}
