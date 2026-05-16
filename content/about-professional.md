@@ -20,7 +20,7 @@ The pattern is the same every time. Ambiguous situation. Real constraints. Ship 
 
 ## Why the Intersection
 
-I moved from India to America at five. Studied at the intersection of business and technology by design. Have spent my career being the person who is technical enough to build and business-minded enough to know what's worth building.
+Studied at the intersection of business and technology by design. Have spent my career being the person who is technical enough to build and business-minded enough to know what's worth building.
 
 I'm never the most technical person in the room. I'm the person who makes the most technical person in the room more effective.
 
@@ -32,7 +32,7 @@ Multi-agent systems. RAG pipelines. LLM evaluation frameworks. Rapid prototypes 
 
 ## The Part That Doesn't Fit a Resume
 
-I think in systems and I write to process what I'm seeing. I have a Substack where I work things out in public. I study how Thomas Edison built the world's first industrial research lab and apply it to how I think about team culture. I came from a farming village in Karnataka where my name was assigned by the position of the moon at my birth.
+I think in systems and I write to process what I'm seeing. I have a Substack where I work things out in public. I study how Thomas Edison built the world's first industrial research lab and apply it to how I think about team culture. I came from a farming village in Karnataka where my name was assigned by the position of the moon at my birth. I moved to America at five.
 
 I've attended 17 schools in my life. I tell you this not because it's professionally relevant but because I operate on a cultural level. I had to earn trust in rooms where nobody knew me yet. I had to read what was actually happening underneath what people were saying. I had to know when to build and when to ask one more question.
 
