@@ -32,7 +32,10 @@ const signatureFont = Great_Vibes({
 
 export const metadata: Metadata = {
   title: "Kruthik B.S. Hulisandra — Portfolio",
-  description: "A no BS kinda guy. Engineering, product, and strategy.",
+  description: "Engineering, product, and strategy.",
+  icons: {
+    icon: "/icon.png",
+  },
 }
 
 export default function RootLayout({
