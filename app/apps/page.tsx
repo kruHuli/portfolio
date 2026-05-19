@@ -11,6 +11,15 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
+    title: "gmail2notion",
+    eyebrow: "Gmail · GPT-4o · Notion",
+    description: "My inbox knew about job opportunities before my Notion tracker did. This script bridges the gap. OAuth into Gmail, GPT-4o extracts the signal, Notion gets a clean structured row. Safe to cron daily.",
+    status: "view project",
+    href: "/projects/gmail2notion",
+    wide: true,
+    isNew: true,
+  },
+  {
     title: "Speaking Studio",
     eyebrow: "AI Speech Coaching",
     description: "I fed 200+ of my own recordings into a pipeline — Whisper transcription, wav2vec2 emotion analysis, and three AI coaches scoring me across 7 dimensions. The results are uncomfortable.",
@@ -83,41 +92,66 @@ export default function AppsPage() {
           {apps.map((app) => {
             const CardWrapper = app.href
               ? ({ children }: { children: React.ReactNode }) => (
-                  <Link href={app.href!} className="block">
+                  <Link href={app.href!} className={`block${app.wide ? " md:col-span-2" : ""}`}>
                     {children}
                   </Link>
                 )
-              : ({ children }: { children: React.ReactNode }) => <>{children}</>
+              : ({ children }: { children: React.ReactNode }) => (
+                  <div className={app.wide ? "md:col-span-2" : ""}>{children}</div>
+                )
             return (
               <CardWrapper key={app.title}>
                 <article
-                  className="group rounded-3xl border-2 border-[#EA580C] bg-white p-6 shadow-[6px_6px_0_0_#C2410C] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#C2410C]"
+                  className={`group relative rounded-3xl border-2 border-[#EA580C] bg-white p-6 shadow-[6px_6px_0_0_#C2410C] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#C2410C]${app.wide ? " md:flex md:gap-12 md:p-10" : ""}`}
                 >
-                  <div className="mb-8 flex items-center justify-between gap-4">
-                    <span className="rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black tracking-[0.12em] text-orange-700">
-                      {app.eyebrow}
+                  {app.isNew && (
+                    <span className="absolute -right-3 -top-3 rotate-12 rounded-lg border-2 border-[#C2410C] bg-[#EA580C] px-2.5 py-1 text-[11px] font-black tracking-[0.15em] text-white shadow-[2px_2px_0_0_#9A3412]">
+                      NEW
                     </span>
-                    <GithubLogo className="h-5 w-5 text-[#EA580C]" />
+                  )}
+
+                  <div className={app.wide ? "flex flex-col justify-between md:w-1/2" : ""}>
+                    <div className="mb-8 flex items-center justify-between gap-4">
+                      <span className="rounded-lg border-2 border-orange-300 bg-orange-100 px-3 py-1 text-[11px] font-black tracking-[0.12em] text-orange-700">
+                        {app.eyebrow}
+                      </span>
+                      <GithubLogo className="h-5 w-5 text-[#EA580C]" />
+                    </div>
+
+                    <div className="mb-8">
+                      <h2 className={`font-display font-black leading-tight text-stone-900${app.wide ? " text-4xl md:text-5xl" : " text-3xl"}`}>
+                        {app.title}
+                      </h2>
+                      <p className="mt-4 text-sm font-medium leading-relaxed text-stone-600 md:text-base">
+                        {app.description}
+                      </p>
+                    </div>
+
+                    <div className="flex items-center justify-between border-t-2 border-orange-100 pt-5">
+                      <span className="font-mono text-xs font-black tracking-[0.12em] text-stone-400">
+                        {app.status}
+                      </span>
+                      <span className="inline-flex items-center gap-2 text-sm font-black text-[#EA580C]">
+                        {app.href ? "View project" : "View soon"}
+                        <ArrowUpRight size={16} />
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="mb-8">
-                    <h2 className="font-display text-3xl font-black leading-tight text-stone-900">
-                      {app.title}
-                    </h2>
-                    <p className="mt-4 text-sm font-medium leading-relaxed text-stone-600 md:text-base">
-                      {app.description}
-                    </p>
-                  </div>
-
-                  <div className="flex items-center justify-between border-t-2 border-orange-100 pt-5">
-                    <span className="font-mono text-xs font-black tracking-[0.12em] text-stone-400">
-                      {app.status}
-                    </span>
-                    <span className="inline-flex items-center gap-2 text-sm font-black text-[#EA580C]">
-                      {app.href ? "View project" : "View soon"}
-                      <ArrowUpRight size={16} />
-                    </span>
-                  </div>
+                  {app.wide && (
+                    <div className="hidden items-center justify-center rounded-2xl border-2 border-orange-100 bg-orange-50 md:flex md:w-1/2">
+                      <div className="text-center">
+                        <p className="font-mono text-xs font-black tracking-[0.2em] text-orange-300">PIPELINE</p>
+                        <div className="mt-4 flex items-center gap-3 text-sm font-black text-stone-400">
+                          <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">Gmail</span>
+                          <span className="text-[#EA580C]">→</span>
+                          <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">GPT-4o</span>
+                          <span className="text-[#EA580C]">→</span>
+                          <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">Notion</span>
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </article>
               </CardWrapper>
             )

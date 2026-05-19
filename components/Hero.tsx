@@ -196,6 +196,7 @@ type NewsItem = {
 const heroNewsItems: NewsItem[] = [
   { label: "I JUST GRADUATED 🎓 🍾" },
   { label: "Open to opportunities as a forward deployed AI engineer" },
+  { label: "I hate getting rejection emails so I make AI read them for me — new project live", href: "/apps" },
 ]
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
@@ -262,7 +263,7 @@ export default function Hero() {
             <motion.div
               className="flex w-max items-center gap-8 whitespace-nowrap py-2 pl-6 pr-8 text-sm font-semibold"
               animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 21.6, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 36.29, repeat: Infinity, ease: "linear" }}
             >
               {[...Array(8)].flatMap(() => heroNewsItems).map((item, index) => (
                 <span key={`${item.label}-${index}`} className="inline-flex items-center gap-8">
