@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { ArrowUpRight } from "lucide-react"
-import kruhuliLogo from "@/content/kruhulilogo.png"
+import khIcon from "@/app/icon.png"
 
 const GithubLogo = ({ className = "" }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -51,20 +51,20 @@ const apps = [
 
 export default function AppsPage() {
   return (
-    <main className="min-h-screen bg-[#FFF7ED] px-6 py-10">
+    <main className="min-h-screen bg-white px-6 py-10">
       <div className="mx-auto max-w-6xl">
         <nav className="mb-16 flex items-center justify-between">
           <Link
             href="/"
-            className="inline-flex h-[44px] shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 border-[#C2410C] bg-[#EA580C] p-0 shadow-[0_4px_0px_0px_#9A3412] transition-all duration-75 active:translate-y-[3px] active:shadow-[0_1px_0px_0px_#9A3412]"
+            className="inline-flex h-[44px] w-[44px] shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 border-stone-200 bg-white p-1 shadow-[0_4px_0px_0px_#d6d3d1] transition-all duration-75 active:translate-y-[3px] active:shadow-[0_1px_0px_0px_#d6d3d1]"
             aria-label="Back home"
           >
             <Image
-              src={kruhuliLogo}
-              alt="Kruhuli logo"
-              width={1024}
-              height={1024}
-              className="h-[44px] w-[126px] object-cover"
+              src={khIcon}
+              alt="KH logo"
+              width={44}
+              height={44}
+              className="h-full w-full object-contain"
               priority
             />
           </Link>
@@ -84,7 +84,7 @@ export default function AppsPage() {
             My Projects
           </h1>
           <p className="mx-auto mt-5 max-w-xl text-sm font-medium leading-relaxed text-stone-500 md:text-base">
-            A working drawer for projects, prototypes, and repos. The links can get swapped in as each repo is ready.
+            A working drawer for projects, prototypes, and repos.
           </p>
         </section>
 

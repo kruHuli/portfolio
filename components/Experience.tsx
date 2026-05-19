@@ -13,7 +13,7 @@ import ScatteredIconBg, {
 export default function Experience() {
   const [expandedId, setExpandedId] = useState<string | null>(null)
   return (
-    <section id="experience" className="relative py-28 px-6 bg-[#FFF7ED]">
+    <section id="experience" className="relative py-28 px-6 bg-white">
       <ScatteredIconBg
         icons={[Basketball, SoccerBall, GolfFlag, LacrosseStick, RobotHead, OpenBook, Laptop, Medal, Trophy, Brain, Cricket]}
         iconColor="#92400E"

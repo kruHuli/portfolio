@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Link from "next/link"
 import { motion } from "framer-motion"
 import ScatteredIconBg, { OpenBook, Laptop, Brain } from "@/components/ScatteredIconBg"
 
@@ -49,6 +50,45 @@ function renderMarkdownBlock(block: string, key: string, applyLowercase = false)
       <h4 key={key} className={`pt-4 font-display text-xl font-black leading-tight text-[#EA580C] sm:text-2xl${applyLowercase ? " lowercase" : ""}`}>
         {trimmed.slice(3)}
       </h4>
+    )
+  }
+
+  const ctaMatch = trimmed.match(/^\[([^\]]+)\]\(([^)]+)\)$/)
+  if (ctaMatch) {
+    return (
+      <div key={key} className="flex justify-center">
+        <Link
+          href={ctaMatch[2]}
+          className="inline-flex items-center gap-2 rounded-xl border-2 border-[#C2410C] bg-[#EA580C] px-5 py-2.5 text-sm font-black text-white shadow-[0_4px_0px_0px_#9A3412] transition-all duration-75 hover:bg-[#DC4D08] active:translate-y-[3px] active:shadow-[0_1px_0px_0px_#9A3412]"
+        >
+          {ctaMatch[1]}
+        </Link>
+      </div>
+    )
+  }
+
+  if (trimmed.includes("<iframe")) {
+    const srcMatch = trimmed.match(/src="([^"]+)"/)
+    const beforeIframe = trimmed.substring(0, trimmed.indexOf("<iframe")).trim()
+    return (
+      <div key={key} className="space-y-4">
+        {beforeIframe && (
+          <p className={`text-sm font-medium leading-7 text-stone-600 sm:text-base${applyLowercase ? " lowercase" : ""}`}>
+            {renderInlineMarkdown(beforeIframe)}
+          </p>
+        )}
+        {srcMatch && (
+          <div className="relative aspect-video w-full overflow-hidden rounded-2xl">
+            <iframe
+              src={srcMatch[1]}
+              title="Video"
+              className="h-full w-full"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowFullScreen
+            />
+          </div>
+        )}
+      </div>
     )
   }
 
@@ -124,7 +164,7 @@ function MarkdownContent({ markdown }: { markdown: string }) {
 
 export default function AboutBlogClient({ markdown }: { markdown: string }) {
   return (
-    <section id="about" className="relative bg-[#FFF7ED] px-6 py-28">
+    <section id="about" className="relative bg-white px-6 py-28">
       <ScatteredIconBg icons={[OpenBook, Laptop, Brain]} iconColor="#92400E" dotColor="rgba(120,60,0,0.9)" />
       <div className="relative z-10 mx-auto max-w-5xl">
         <motion.div

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import kruhuliLogo from "@/content/kruhulilogo.png"
+import khIcon from "@/app/icon.png"
 import { cn } from "@/lib/utils"
 
 const NAV_LINKS = [
@@ -55,17 +55,17 @@ export default function Navigation() {
               navPillShell,
               "overflow-hidden select-none p-0",
               scrolled
-                ? "border-[#C2410C] bg-[#EA580C] shadow-[0_4px_0px_0px_#9A3412] active:shadow-[0_1px_0px_0px_#9A3412]"
+                ? "border-stone-200 bg-white shadow-[0_4px_0px_0px_#d6d3d1] active:shadow-[0_1px_0px_0px_#d6d3d1]"
                 : "border-white/80 bg-white shadow-[0_4px_0px_0px_rgba(255,255,255,0.4)] active:shadow-[0_1px_0px_0px_rgba(255,255,255,0.4)]",
             )}
             aria-label="Back to top"
           >
             <Image
-              src={kruhuliLogo}
-              alt="Kruhuli logo"
-              width={1024}
-              height={1024}
-              className="h-[44px] w-[126px] object-cover"
+              src={khIcon}
+              alt="KH logo"
+              width={44}
+              height={44}
+              className="h-full w-full object-contain"
               priority
             />
           </button>
