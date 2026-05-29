@@ -133,7 +133,7 @@ function CoachCard({ coach }: { coach: typeof coaches[0] }) {
         </div>
         <button
           onClick={() => setOpen(o => !o)}
-          className="flex items-center gap-1.5 text-xs font-black opacity-60 hover:opacity-100 transition-opacity mt-1 shrink-0"
+          className="flex items-center gap-1.5 rounded-lg border-2 border-[#EA580C] bg-white px-3 py-1.5 text-xs font-black text-[#EA580C] shadow-[2px_2px_0_0_#C2410C] transition-all duration-75 hover:bg-orange-50 active:translate-y-[2px] active:shadow-none shrink-0 mt-1"
         >
           {open ? "collapse" : "read feedback"}
           <ChevronDown size={13} className="transition-transform duration-200" style={{ transform: open ? "rotate(180deg)" : "rotate(0)" }} />
