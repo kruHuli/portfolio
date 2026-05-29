@@ -105,7 +105,7 @@ export default function AppsPage() {
                   className={`group relative rounded-3xl border-2 border-[#EA580C] bg-white p-6 shadow-[6px_6px_0_0_#C2410C] transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[8px_8px_0_0_#C2410C]${app.wide ? " md:flex md:gap-12 md:p-10" : ""}`}
                 >
                   {app.isNew && (
-                    <span className="absolute -right-3 -top-3 rotate-12 rounded-lg border-2 border-[#C2410C] bg-[#EA580C] px-2.5 py-1 text-[11px] font-black tracking-[0.15em] text-white shadow-[2px_2px_0_0_#9A3412]">
+                    <span className="absolute -right-4 -top-4 rotate-12 rounded-lg border-2 border-blue-700 bg-blue-600 px-4 py-1.5 text-sm font-black tracking-[0.15em] text-white shadow-[2px_2px_0_0_#1d4ed8]">
                       NEW
                     </span>
                   )}

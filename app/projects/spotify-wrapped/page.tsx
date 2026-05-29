@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import type { Metadata } from "next"
-import kruhuliLogo from "@/content/kruhulilogo.png"
+import khIcon from "@/app/icon.png"
 
 export const metadata: Metadata = {
   title: "Actual Wrapped 2021-2025 | Kruthik Hulisandra",
@@ -54,15 +54,15 @@ export default function SpotifyWrappedPage() {
       <header className="sticky top-0 z-10 flex items-center justify-between border-b-2 border-[#EA580C] bg-[#FFF7ED] px-6 py-3">
         <Link
           href="/"
-          className="inline-flex h-[40px] shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 border-[#C2410C] bg-[#EA580C] p-0 shadow-[0_3px_0px_0px_#9A3412] transition-all duration-75 active:translate-y-[2px] active:shadow-[0_1px_0px_0px_#9A3412]"
+          className="inline-flex h-[44px] w-[44px] shrink-0 items-center justify-center overflow-hidden rounded-xl border-2 border-stone-200 bg-white p-1 shadow-[0_4px_0px_0px_#d6d3d1] transition-all duration-75 active:translate-y-[3px] active:shadow-[0_1px_0px_0px_#d6d3d1]"
           aria-label="Back home"
         >
           <Image
-            src={kruhuliLogo}
-            alt="Kruhuli logo"
-            width={1024}
-            height={1024}
-            className="h-[40px] w-[114px] object-cover"
+            src={khIcon}
+            alt="KH logo"
+            width={44}
+            height={44}
+            className="h-full w-full object-contain"
             priority
           />
         </Link>
