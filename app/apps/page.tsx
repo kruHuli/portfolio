@@ -11,6 +11,14 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
+    title: "LinkedIn Pipeline",
+    eyebrow: "PubMed · GPT-4o · Flask",
+    description: "Search for anything. This pulls actual peer-reviewed research from PubMed — not summaries, not blog posts. Type a topic, get real studies back.",
+    status: "view project",
+    href: "/projects/linkedin-pipeline",
+    isNew: true,
+  },
+  {
     title: "gmail2notion",
     eyebrow: "Gmail · GPT-4o · Notion",
     description: "My inbox knew about job opportunities before my Notion tracker did. This script bridges the gap. OAuth into Gmail, GPT-4o extracts the signal, Notion gets a clean structured row. Safe to cron daily.",
