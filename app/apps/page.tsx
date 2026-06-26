@@ -16,7 +16,9 @@ const apps = [
     description: "Search for anything. This pulls actual peer-reviewed research from PubMed — not summaries, not blog posts. Type a topic, get real studies back.",
     status: "view project",
     href: "/projects/linkedin-pipeline",
+    wide: true,
     isNew: true,
+    pipeline: ["PubMed", "GPT-4o", "Your voice"],
   },
   {
     title: "gmail2notion",
@@ -24,8 +26,6 @@ const apps = [
     description: "My inbox knew about job opportunities before my Notion tracker did. This script bridges the gap. OAuth into Gmail, GPT-4o extracts the signal, Notion gets a clean structured row. Safe to cron daily.",
     status: "view project",
     href: "/projects/gmail2notion",
-    wide: true,
-    isNew: true,
   },
   {
     title: "Speaking Studio",
@@ -146,16 +146,17 @@ export default function AppsPage() {
                     </div>
                   </div>
 
-                  {app.wide && (
+                  {app.wide && app.pipeline && (
                     <div className="hidden items-center justify-center rounded-2xl border-2 border-orange-100 bg-orange-50 md:flex md:w-1/2">
                       <div className="text-center">
                         <p className="font-mono text-xs font-black tracking-[0.2em] text-orange-300">PIPELINE</p>
                         <div className="mt-4 flex items-center gap-3 text-sm font-black text-stone-400">
-                          <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">Gmail</span>
-                          <span className="text-[#EA580C]">→</span>
-                          <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">GPT-4o</span>
-                          <span className="text-[#EA580C]">→</span>
-                          <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">Notion</span>
+                          {app.pipeline.map((step, i) => (
+                            <span key={step} className="inline-flex items-center gap-3">
+                              <span className="rounded-lg border-2 border-orange-200 bg-white px-3 py-2">{step}</span>
+                              {i < app.pipeline!.length - 1 && <span className="text-[#EA580C]">→</span>}
+                            </span>
+                          ))}
                         </div>
                       </div>
                     </div>
