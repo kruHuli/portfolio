@@ -33,7 +33,7 @@ const LacrosseStick = ({ className = "" }: { className?: string }) => (
   <svg viewBox="-30 -76 60 116" fill="none" className={className} stroke="currentColor" strokeLinecap="round">
     {/* Shaft */}
     <line x1="0" y1="0" x2="-14" y2="38" strokeWidth="5" />
-    {/* Mushroom head — narrow throat, wide shoulders, domed top */}
+    {/* Mushroom head: narrow throat, wide shoulders, domed top */}
     <path
       d="M-5,0 C-22,-8 -28,-28 -24,-50 Q-18,-70 0,-72 Q18,-70 24,-50 C28,-28 22,-8 5,0 Z"
       fill="currentColor" fillOpacity="0.22" strokeWidth="3"
@@ -196,7 +196,7 @@ type NewsItem = {
 const heroNewsItems: NewsItem[] = [
   { label: "I JUST GRADUATED 🎓 🍾" },
   { label: "Open to opportunities as a forward deployed AI engineer" },
-  { label: "I hate getting rejection emails so I make AI read them for me — new project live", href: "/apps" },
+  { label: "LeetCode questions are antiquated, so I built something better: PromptGym is live", href: "/projects/promptgym" },
 ]
 
 // ── Hero ──────────────────────────────────────────────────────────────────────
@@ -237,7 +237,7 @@ export default function Hero() {
         )
       })}
 
-      {/* Radial vignette — softens icons toward the text center */}
+      {/* Radial vignette: softens icons toward the text center */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
