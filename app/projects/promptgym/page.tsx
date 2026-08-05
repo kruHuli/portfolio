@@ -17,21 +17,21 @@ const steps = [
     n: "01",
     kicker: "BRIEF",
     title: "A messy, real brief",
-    body: "Every challenge is a garbled meeting transcript — conflicting requirements, half-remembered thresholds, people dropping off the call. You dig out what actually has to get built.",
+    body: "Every challenge is a garbled meeting transcript: conflicting requirements, half-remembered thresholds, people dropping off the call. You dig out what actually has to get built.",
     tags: ["Ambiguous specs", "Implied requirements", "Timed"],
   },
   {
     n: "02",
     kicker: "BUILD",
     title: "Prompt a coding agent",
-    body: "You don't write the code — you direct a GPT-4o build agent through a three-column IDE. It writes files and runs commands in a live sandbox; a preview iframe renders the app as it takes shape.",
+    body: "You don't write the code. You direct a GPT-5.6 Sol build agent through a three-column IDE. It writes files and runs commands in a live sandbox; a preview iframe renders the app as it takes shape.",
     tags: ["Agentic loop", "Live sandbox", "WebSocket stream"],
   },
   {
     n: "03",
     kicker: "JUDGE",
     title: "A judge LLM grades you",
-    body: "On submit, a judge model scores the build across requirements, correctness, code quality, taste, and prompting skill — plus deterministic token-cost and speed percentiles.",
+    body: "On submit, a judge model scores the build across requirements, correctness, code quality, taste, and prompting skill, plus deterministic token-cost and speed percentiles.",
     tags: ["5-axis rubric", "Cost percentile", "Transcript-graded"],
   },
 ]
@@ -39,7 +39,7 @@ const steps = [
 const stack = [
   { label: "FastAPI", category: "Backend" },
   { label: "React + Vite", category: "Frontend" },
-  { label: "GPT-4o", category: "Agent + Judge" },
+  { label: "GPT-5.6 Sol", category: "Agent + Judge" },
   { label: "WebSockets", category: "Live stream" },
   { label: "subprocess sandbox", category: "Execution" },
   { label: "Fly.io", category: "Deploy" },
@@ -76,8 +76,8 @@ export default function PromptGymPage() {
             PromptGym
           </h1>
           <p className="mx-auto mt-5 max-w-2xl text-base font-medium leading-relaxed text-stone-500">
-            A timed arena for AI-assisted building. You get a messy brief and a coding agent —
-            prompt it to ship a working app before the clock runs out, then a judge LLM grades
+            A timed arena for AI-assisted building. You get a messy brief and a coding agent,
+            then prompt it to ship a working app before the clock runs out, and a judge LLM grades
             the result and your prompting.
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
