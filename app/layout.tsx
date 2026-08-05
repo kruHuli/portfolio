@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Poppins, Inter, Geist_Mono, Big_Shoulders_Stencil, Great_Vibes } from "next/font/google"
 import "./globals.css"
+import { Analytics } from "@vercel/analytics/next"
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -45,7 +46,10 @@ export default function RootLayout({
       lang="en"
       className={`${poppins.variable} ${inter.variable} ${geistMono.variable} ${logoFont.variable} ${signatureFont.variable}`}
     >
-      <body className="bg-background text-foreground antialiased">{children}</body>
+      <body className="bg-background text-foreground antialiased">
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
