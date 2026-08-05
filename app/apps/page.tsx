@@ -11,13 +11,21 @@ const GithubLogo = ({ className = "" }: { className?: string }) => (
 
 const apps = [
   {
+    title: "PromptGym",
+    eyebrow: "FastAPI · React · GPT-5.6 Sol",
+    description: "A timed arena for AI-assisted building. You get a messy brief and a coding agent — prompt it to ship a working app before the clock runs out, then a judge LLM grades the result.",
+    status: "enter the arena",
+    href: "/projects/promptgym",
+    wide: true,
+    isNew: true,
+    pipeline: ["Brief", "Agent", "Judge"],
+  },
+  {
     title: "LinkedIn Pipeline",
     eyebrow: "PubMed · GPT-4o · Flask",
     description: "Search for anything. This pulls actual peer-reviewed research from PubMed — not summaries, not blog posts. Type a topic, get real studies back.",
     status: "view project",
     href: "/projects/linkedin-pipeline",
-    wide: true,
-    isNew: true,
     pipeline: ["PubMed", "GPT-4o", "Your voice"],
   },
   {
